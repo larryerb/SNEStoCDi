@@ -46,9 +46,8 @@ void setup()
 // main
 void loop()
 {
-  if(!assertRTS()) {
-    digitalWrite(ledPin, HIGH);
-    while(!assertRTS()) { } // wait for CDi to assert the RTS line
+  if(analogRead(RTSpin) < RTSthreshold) {
+    while(analogRead(RTSpin) < RTSthreshold) { } // wait for CDi to assert the RTS line
     if(firstId) delay(100);
     else delay(1);
     firstId = false;
@@ -147,21 +146,15 @@ void loop()
 
   if((padbyte0 != oldpadbyte0) || (padbyte1 != 0b10000000) || (padbyte2 != 0b10000000) || ((padbyte0 & 0b00001111) != 0))  // see if state has changed
   {     
-    if(assertRTS()) vSerial.write(padbyte0);
-    if(assertRTS()) vSerial.write(padbyte1);
-    if(assertRTS()) vSerial.write(padbyte2);
+    if(analogRead(RTSpin) > RTSthreshold) vSerial.write(padbyte0);
+    if(analogRead(RTSpin) > RTSthreshold) vSerial.write(padbyte1);
+    if(analogRead(RTSpin) > RTSthreshold) vSerial.write(padbyte2);
   }
 
   // save state
   oldpadbyte0 = padbyte0; 
   oldpadbyte1 = padbyte1;
   oldpadbyte2 = padbyte2;
-}
-
-// true if RTS asserted
-bool assertRTS() {
-  if(analogRead(RTSpin) < RTSthreshold) return false;
-  else return true;
 }
 
 // send back the correct Dpad value depending on the speed setting
