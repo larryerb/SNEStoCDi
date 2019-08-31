@@ -3,6 +3,16 @@ SNES to CDi ATtiny85
 
 This version of the SNES to CDi is based on a small board that you can have built at a board prototyping company and combine with a few dollars in parts to can have a small adapter to allow you to connect your CD-i to a SNES controller or compatible third party controller.  Using an 8Bitdo wireless SNES controller is a great way to enjoy a high quality wireless controller with your CD-i.
 
+Code Changes from the Arduino Version
+-------------------------------------
+
+Most of the code and the snespad library can be carried over as is
+However, we don't have enough pins to waste one on an unused receive pin for the software serial library.
+Fortunately, we can use a library called "SendOnlySoftwareSerial".  You will need to locate this library and install it before this sketch will compile.
+We also remove the led pin as it no longer exists
+
+Additionally, the slower nature of this microcontroller compared to an arduino necessatated a bit of optomization in order to reduce perceptable button lag.  If you are aware of further optomizations, let me know.  Currently, the wireless 8Bitdo controllers feel pretty good, but a wired SNES controller feels perfect in terms of button response.
+
 How to make your own SNEStoCDiATtiny85 adapter
 ----------------------------------------------
 
