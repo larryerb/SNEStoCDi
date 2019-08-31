@@ -138,42 +138,83 @@ void loop()
 
   // Dpad Y axis
   y = 127;
-  if((btns & SNES_UP) || (btns & SNES_A)) { make A button also trigger dpad up to make games where up is jump a little more fun
-    switch (spd) {
-      case 5:
-        y = 254;
-        break;
-      case 4:
-        y = 170;
-        break;
-      case 3:
-        y = 149;
-        break;
-      case 2:
-        y = 139;
-        break;
-      case 1:
-        y = 130;
-        break;
+  if (standardMapping) {
+    if((btns & SNES_UP) || (btns & SNES_A)) { // Standard config, make A button also trigger dpad up to make games where up is jump a little more fun
+      switch (spd) {
+        case 5:
+          y = 254;
+          break;
+        case 4:
+          y = 170;
+          break;
+        case 3:
+          y = 149;
+          break;
+        case 2:
+          y = 139;
+          break;
+        case 1:
+          y = 130;
+          break;
+      }
     }
-  }
-  if(btns & SNES_DOWN) {
-    switch (spd) {
-      case 5:
-        y = 1;
-        break;
-      case 4:
-        y = 85;
-        break;
-      case 3:
-        y = 106;
-        break;
-      case 2:
-        y = 116;
-        break;
-      case 1:
-        y = 125;
-        break;
+    if(btns & SNES_DOWN) {
+      switch (spd) {
+        case 5:
+          y = 1;
+          break;
+        case 4:
+          y = 85;
+          break;
+        case 3:
+          y = 106;
+          break;
+        case 2:
+          y = 116;
+          break;
+        case 1:
+          y = 125;
+          break;
+      }
+    }
+  } else {
+    if((btns & SNES_UP) || (btns & SNES_Y)) { // Alternate config, make Y button also trigger dpad up to make games where up is jump a little more fun
+      switch (spd) {
+        case 5:
+          y = 254;
+          break;
+        case 4:
+          y = 170;
+          break;
+        case 3:
+          y = 149;
+          break;
+        case 2:
+          y = 139;
+          break;
+        case 1:
+          y = 130;
+          break;
+      }
+    }
+    if(btns & SNES_DOWN) {
+      switch (spd) {
+        case 5:
+          y = 1;
+          break;
+        case 4:
+          y = 85;
+          break;
+        case 3:
+          y = 106;
+          break;
+        case 2:
+          y = 116;
+          break;
+        case 1:
+          y = 125;
+          break;
+      }
     }
   }
 
@@ -200,17 +241,17 @@ void loop()
 
   // buttons
   if(btns & SNES_SELECT) {
-    if(!btnSEpressed) standardMapping = !standardMapping; // mapping change : invert buttons 1 & 2 (Y & B)
+    if(!btnSEpressed) standardMapping = !standardMapping; // mapping change : switch button A and Y
     btnSEpressed = true;
   }
   else btnSEpressed = false;
   if(standardMapping) {
-    if(btns & SNES_Y) padbyte0 = padbyte0 | 0b00100000;  //button 1 (Y)
-    if(btns & SNES_B) padbyte0 = padbyte0 | 0b00010000;  //button 2 (B)
+    if(btns & SNES_B) padbyte0 = padbyte0 | 0b00100000;  //button 1 (B)
+    if(btns & SNES_Y) padbyte0 = padbyte0 | 0b00010000;  //button 2 (Y)
   }
   else {
     if(btns & SNES_B) padbyte0 = padbyte0 | 0b00100000;  //button 1 (B)
-    if(btns & SNES_Y) padbyte0 = padbyte0 | 0b00010000;  //button 2 (Y)
+    if(btns & SNES_A) padbyte0 = padbyte0 | 0b00010000;  //button 2 (A)
   }
   if(btns & SNES_X) padbyte0 = padbyte0 | 0b00110000; // button 3 (X)
 
