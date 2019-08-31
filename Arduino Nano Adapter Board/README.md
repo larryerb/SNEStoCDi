@@ -96,4 +96,4 @@ Future Improvements
 
 This board is cool but way bigger than it needs to be.  The massive ground planes on the top and bottom make soldering more complicated than it needs to be.  I started creating the ATtiny85 version shortly after finishing this version just to try and make something smaller and cheaper.  However, since this board actually has a case and works perfectly good enough, it ended up being the version I use day to day, and probably will be the one that most people would choose to make for themselves.
 
-It would be nice to redesign the board to be a little smaller while still fitting into the case, and also it would be nice to have a way to firmly secure the SNES adapter to the case so you could swap controllers without having to unscrew the case.
+It would be nice to redesign the board to be a little smaller while still fitting into the case, and also it would be nice to have a way to firmly secure the SNES controller port to the case so you could swap controllers without having to unscrew the case.
