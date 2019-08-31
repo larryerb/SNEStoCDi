@@ -89,7 +89,7 @@ How to build and flash the code
 Follow Laurent's instructions from the base Arduino Adapter, but select Arduino Nano as the target board
 
 The completed adapter hooked up to an 8Bitdo wireless snes controller looks like this:
-![The completed SNES to CD-i Adapter](https://github.com/larryerb/SNEStoCDi/blob/master/ATtiny85%20Adapter%20Board/images/Adapter_In_Action.jpg)
+![The completed SNES to CD-i Adapter](https://github.com/larryerb/SNEStoCDi/blob/master/Arduino%20Nano%20Adapter%20Board/images/Adapter_In_Action.jpg)
 
 Future Improvements
 -------------------
