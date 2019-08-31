@@ -54,6 +54,9 @@ Part Orientation:
 4. ATtiny85: pin one 'dot' on the microcontroller must be facing the side of the chip outline that has the small "bite" out of it
 5. JST XH Adapter: The side with cut outs for the XH housing to mate with must be facing the inside of the board
 
+The completed adatper will look like this:
+![The Completed SNES to CD-i Adapter](https://github.com/larryerb/SNEStoCDi/blob/master/sketchSNEStoCDiAtTiny85/Assembled.jpg =500x)
+
 Create the SNES adapter cable:
 1. Take the SNES extension cable and cut the end that the controller plugs into around 6 to 8 inches (15 to 20 centimeters) from the connector
 2. Strip the outer insulation back by a couple centimeters, and then strip the ends of each of the smaller wires by 5 or 6 milimeters
@@ -61,3 +64,18 @@ Create the SNES adapter cable:
    The SNES controller pinout goes (+5V)(CLOCK)(LATCH)(DATA) | (NC)(NC)(GND)
    The connections on the board are labeled in the same order.
 4. Either crimp the pin connectors on each of the wires from the adapter and insert them into the XH housing in the correct order, or solder the wires directly into the correct holes
+
+How to build and flash the code
+-------------------------------
+
+You can use an arduino or a USB to AVR ISP programmer to flash this board.  You'll need the Arduino IDE to compile this sketch file and upload it to the ATtiny85.
+
+I followed this guide to set up the Arduino IDE to program the ATtiny85:
+https://create.arduino.cc/projecthub/arjun/programming-attiny85-with-arduino-uno-afb829
+
+With the Arduino IDE, if you are uploading the sketch to the ATtiny85 for the first time, you will have to ensure the clock speed is set to "16 MHz" and run "Burn Bootloader" before using the adapter for the first time.  Otherwise the adapter will run at 1 MHz and not work.
+
+The arduino board flasher I built to program the adapter looks like this:
+![Flashing the board](https://github.com/larryerb/SNEStoCDi/blob/master/sketchSNEStoCDiAtTiny85/Flashing.jpg =500x)
+
+The 6 pin ISP header cable and breadboard adapter were bought from Adafruit
