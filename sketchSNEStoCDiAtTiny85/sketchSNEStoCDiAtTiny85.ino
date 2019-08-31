@@ -54,8 +54,8 @@ void loop()
     vSerial.write(0b11001010); // send device id ("maneuvering device")
   }
 
-	// Get the state of the SNES pad buttons
-	btns = pad.buttons();
+  // Get the state of the SNES pad buttons
+  btns = pad.buttons();
 
   // manage speed control
   if(btns & SNES_R) {
@@ -76,9 +76,44 @@ void loop()
 
   // Dpad X axis
   x = 127;
-  if(btns & SNES_LEFT) x = 254;
-  if(btns & SNES_RIGHT) x = 1;
-  x = adjustSpeed(x);
+  if(btns & SNES_LEFT) {
+    switch (spd) {
+      case 5:
+        x = 254;
+        break;
+      case 4:
+        x = 170;
+        break;
+      case 3:
+        x = 149;
+        break;
+      case 2:
+        x = 139;
+        break;
+      case 1:
+        x = 130;
+        break;
+    }
+  }
+  if(btns & SNES_RIGHT) {
+    switch (spd) {
+      case 5:
+        x = 1;
+        break;
+      case 4:
+        x = 85;
+        break;
+      case 3:
+        x = 106;
+        break;
+      case 2:
+        x = 116;
+        break;
+      case 1:
+        x = 125;
+        break;
+    }
+  }
   
   if(x<127) // right
   {
@@ -103,9 +138,44 @@ void loop()
 
   // Dpad Y axis
   y = 127;
-  if(btns & SNES_UP) y = 254;
-  if(btns & SNES_DOWN) y = 1;
-  y = adjustSpeed(y);
+  if((btns & SNES_UP) || (btns & SNES_A)) { make A button also trigger dpad up to make games where up is jump a little more fun
+    switch (spd) {
+      case 5:
+        y = 254;
+        break;
+      case 4:
+        y = 170;
+        break;
+      case 3:
+        y = 149;
+        break;
+      case 2:
+        y = 139;
+        break;
+      case 1:
+        y = 130;
+        break;
+    }
+  }
+  if(btns & SNES_DOWN) {
+    switch (spd) {
+      case 5:
+        y = 1;
+        break;
+      case 4:
+        y = 85;
+        break;
+      case 3:
+        y = 106;
+        break;
+      case 2:
+        y = 116;
+        break;
+      case 1:
+        y = 125;
+        break;
+    }
+  }
 
   if(y<127) // down
   {
@@ -142,7 +212,7 @@ void loop()
     if(btns & SNES_B) padbyte0 = padbyte0 | 0b00100000;  //button 1 (B)
     if(btns & SNES_Y) padbyte0 = padbyte0 | 0b00010000;  //button 2 (Y)
   }
-  if((btns & SNES_X) || (btns & SNES_A)) padbyte0 = padbyte0 | 0b00110000; // button 3 (A or X)
+  if(btns & SNES_X) padbyte0 = padbyte0 | 0b00110000; // button 3 (X)
 
   if((padbyte0 != oldpadbyte0) || (padbyte1 != 0b10000000) || (padbyte2 != 0b10000000) || ((padbyte0 & 0b00001111) != 0))  // see if state has changed
   {     
@@ -155,25 +225,6 @@ void loop()
   oldpadbyte0 = padbyte0; 
   oldpadbyte1 = padbyte1;
   oldpadbyte2 = padbyte2;
-}
-
-// send back the correct Dpad value depending on the speed setting
-int adjustSpeed(int val)
-{
-  if(val==127 || spd==5) return val;
-
-  if(val==254) {
-    if(spd==4) return 170;
-    if(spd==3) return 149;
-    if(spd==2) return 139;
-    if(spd==1) return 130;
-  }
-  else {
-    if(spd==4) return 85;
-    if(spd==3) return 106;
-    if(spd==2) return 116;
-    if(spd==1) return 125;
-  }
 }
 
 // change speed setting and save it to the EEPROM
