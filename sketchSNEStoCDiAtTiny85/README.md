@@ -34,6 +34,7 @@ For the complete bill of materials:
 7. 2x3 Header pins, 2.54mm spacing - Digikey part number: 952-2121-ND, Manufacturer part number: M20-9980346
 8. SNES Extension Cable
 9. 8 pin mini din to 8 pin mini din cable
+10. (Optional) 8 pin (2x4) chip socket - Digikey part number: ED90032-ND, Manufacturer part number: 110-43-308-41-001000
 
 When assembling the board, solder the smallest to largest components in order.
 
