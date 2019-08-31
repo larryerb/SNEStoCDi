@@ -61,7 +61,7 @@ Create the SNES adapter cable:
 1. Take the SNES extension cable and cut the end that the controller plugs into around 6 to 8 inches (15 to 20 centimeters) from the connector
 2. Strip the outer insulation back by a couple centimeters, and then strip the ends of each of the smaller wires by 5 or 6 milimeters
 3. Using a multimeter in continuity mode, confirm which wire goes to which pin on the connector, and write down the color of the wire and which pin it connects to
-   The SNES controller pinout goes (+5V)(CLOCK)(LATCH)(DATA) | (NC)(NC)(GND)
+   The SNES controller pinout goes `(+5V)(CLOCK)(LATCH)(DATA) | (NC)(NC)(GND)`
    The connections on the board are labeled in the same order.
 4. Either crimp the pin connectors on each of the wires from the adapter and insert them into the XH housing in the correct order, or solder the wires directly into the correct holes
 
@@ -89,4 +89,4 @@ The arduino board flasher I built to program the adapter looks like this:
 Future Improvements
 -------------------
 
-This board is cool but it has no housing!  I'll see if I can't either find a housing and redo the board to match it or 3d print something.  If you are handy with a 3d printer and 
+This board is cool but it has no housing!  I'll see if I can't either find a housing and redo the board to match it or try to 3d print something.  If you are handy with a 3d printer and want to help out, feel free to send me the design file.  I am also totally open to further improvements in the source or design of the board itself.
