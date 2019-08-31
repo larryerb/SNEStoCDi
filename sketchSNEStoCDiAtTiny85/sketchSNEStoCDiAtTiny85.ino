@@ -11,14 +11,13 @@
  *
  ******************************/
 
-#include <SoftwareSerial.h>
+#include <SendOnlySoftwareSerial.h>
 #include <SNESpad.h>
 #include <EEPROM.h>
 
-SNESpad pad = SNESpad(5, 6, 7); // Create a SNESpad instance, change the pin values to match your wiring (latch, clock, data)
-SoftwareSerial vSerial(9, 10, true); // RX, TX, inverse_logic. RX is not used here, as the CDi only communicates on the RTS line
-const int RTSpin = 5; // the number of the analog pin used to receive the RTS signal from the CDi
-const int ledPin = 13; // the number of the inboard LED pin
+SNESpad pad = SNESpad(1, 2, 0); // Create a SNESpad instance, change the pin values to match your wiring (latch, clock, data)
+SendOnlySoftwareSerial vSerial(4, true); // TX, inverse_logic. No RX needed as the CDi only communicates via the RTS line.  Connects to the RXD pin on the console.
+const int RTSpin = 3; // the number of the analog pin used to receive the RTS signal from the CDi
 
 const int RTSthreshold = 328; // threshold for the CDi RTS analog detection
 uint16_t btns;
@@ -41,7 +40,6 @@ void setup()
   if(eepromData >= 1 && eepromData <= 5) spd = eepromData;
   else spd = 3;
   
-  pinMode(ledPin, OUTPUT);
   vSerial.begin(1200); // open serial interface to send data to the CDi
 }
 
@@ -56,7 +54,6 @@ void loop()
     firstId = false;
     vSerial.write(0b11001010); // send device id ("maneuvering device")
   }
-  digitalWrite(ledPin, LOW);
 
 	// Get the state of the SNES pad buttons
 	btns = pad.buttons();
