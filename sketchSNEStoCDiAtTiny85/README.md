@@ -54,8 +54,8 @@ Part Orientation:
 4. ATtiny85: pin one 'dot' on the microcontroller must be facing the side of the chip outline that has the small "bite" out of it
 5. JST XH Adapter: The side with cut outs for the XH housing to mate with must be facing the inside of the board
 
-The completed adatper will look like this:
-![The Completed SNES to CD-i Adapter](https://github.com/larryerb/SNEStoCDi/blob/master/sketchSNEStoCDiAtTiny85/Assembled.jpg)
+The completed adatper will look like this, next to an unpopulated board front and back for comparison:
+![The Assembled SNES to CD-i Adapter](https://github.com/larryerb/SNEStoCDi/blob/master/sketchSNEStoCDiAtTiny85/Assembled.jpg)
 
 Create the SNES adapter cable:
 1. Take the SNES extension cable and cut the end that the controller plugs into around 6 to 8 inches (15 to 20 centimeters) from the connector
@@ -64,6 +64,9 @@ Create the SNES adapter cable:
    The SNES controller pinout goes (+5V)(CLOCK)(LATCH)(DATA) | (NC)(NC)(GND)
    The connections on the board are labeled in the same order.
 4. Either crimp the pin connectors on each of the wires from the adapter and insert them into the XH housing in the correct order, or solder the wires directly into the correct holes
+
+The crimped cable should look something like this:
+![Crimped Cable](https://github.com/larryerb/SNEStoCDi/blob/master/sketchSNEStoCDiAtTiny85/Crimped_Connector.jpg)
 
 How to build and flash the code
 -------------------------------
@@ -79,3 +82,11 @@ The arduino board flasher I built to program the adapter looks like this:
 ![Flashing the board](https://github.com/larryerb/SNEStoCDi/blob/master/sketchSNEStoCDiAtTiny85/Flashing.jpg)
 
 The 6 pin ISP header cable and breadboard adapter were bought from Adafruit
+
+The arduino board flasher I built to program the adapter looks like this:
+![The completed SNES to CD-i Adapter](https://github.com/larryerb/SNEStoCDi/blob/master/sketchSNEStoCDiAtTiny85/Completed_Adapter.jpg)
+
+Future Improvements
+-------------------
+
+This board is cool but it has no housing!  I'll see if I can't either find a housing and redo the board to match it or 3d print something.  If you are handy with a 3d printer and 
