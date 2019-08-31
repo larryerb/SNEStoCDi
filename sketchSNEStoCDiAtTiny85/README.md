@@ -55,7 +55,7 @@ Part Orientation:
 5. JST XH Adapter: The side with cut outs for the XH housing to mate with must be facing the inside of the board
 
 The completed adatper will look like this:
-![The Completed SNES to CD-i Adapter](https://github.com/larryerb/SNEStoCDi/blob/master/sketchSNEStoCDiAtTiny85/Assembled.jpg =500x)
+![The Completed SNES to CD-i Adapter](https://github.com/larryerb/SNEStoCDi/blob/master/sketchSNEStoCDiAtTiny85/Assembled.jpg)
 
 Create the SNES adapter cable:
 1. Take the SNES extension cable and cut the end that the controller plugs into around 6 to 8 inches (15 to 20 centimeters) from the connector
@@ -76,6 +76,6 @@ https://create.arduino.cc/projecthub/arjun/programming-attiny85-with-arduino-uno
 With the Arduino IDE, if you are uploading the sketch to the ATtiny85 for the first time, you will have to ensure the clock speed is set to "16 MHz" and run "Burn Bootloader" before using the adapter for the first time.  Otherwise the adapter will run at 1 MHz and not work.
 
 The arduino board flasher I built to program the adapter looks like this:
-![Flashing the board](https://github.com/larryerb/SNEStoCDi/blob/master/sketchSNEStoCDiAtTiny85/Flashing.jpg =500x)
+![Flashing the board](https://github.com/larryerb/SNEStoCDi/blob/master/sketchSNEStoCDiAtTiny85/Flashing.jpg)
 
 The 6 pin ISP header cable and breadboard adapter were bought from Adafruit
