@@ -6,6 +6,15 @@ SNEStoCDi is an Arduino-based project that allows to use a Nintendo SNES (Super 
 SNEStoCDi is released under Creative Common CC-BY 4.0 licence : http://creativecommons.org/licenses/by/4.0/legalcode
 
 
+Build a permanent SNEStoCDi adapter
+-----------------------------------
+
+The sub folders of this project cover different types of PCBs that you can build to make a more permanent adapter.
+Parts lists, build instructions, and code changes are present as well as board specific README files.
+
+Do note however, that the following steps are still relevant for anyone attempting to build one of them.
+
+
 How to make your own SNEStoCDi adapter
 --------------------------------------
 
