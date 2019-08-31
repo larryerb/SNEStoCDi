@@ -10,6 +10,11 @@ The board layout was simplified by using different pins than Laurent used in the
 
 However, and this may just be my player, but the adapter does not work from the rear controller port unless I reduce the firstId delay to under 100, in fact closer to 1.  The rear port is preferable in order to have the adapter plugged in to the console all the time and not be in the way.  The ATtiny85 version of the board does not have this issue.
 
+The sketch in this directory has the correct pins set for this board, but the differences are as follows:
+1. SNESpad uses 11, 10, and 12 for latch, clock, and data, instead of 5, 6, and 7
+2. SoftwareSerial uses 8 and 9 for RX and TX instead of 9 and 10
+3. RTSpin remains the same
+
 How to make your own adapter
 ----------------------------
 
