@@ -163,15 +163,15 @@ int adjustSpeed(int val)
   if(val==127 || spd==5) return val;
 
   if(val==254) {
-    if(spd==4) return 202;
-    if(spd==3) return 170;
-    if(spd==2) return 149;
+    if(spd==4) return 170;
+    if(spd==3) return 149;
+    if(spd==2) return 139;
     if(spd==1) return 130;
   }
   else {
-    if(spd==4) return 53;
-    if(spd==3) return 85;
-    if(spd==2) return 106;
+    if(spd==4) return 85;
+    if(spd==3) return 106;
+    if(spd==2) return 116;
     if(spd==1) return 125;
   }
 }
