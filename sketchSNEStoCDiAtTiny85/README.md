@@ -83,7 +83,7 @@ The arduino board flasher I built to program the adapter looks like this:
 
 The 6 pin ISP header cable and breadboard adapter were bought from Adafruit
 
-The arduino board flasher I built to program the adapter looks like this:
+The completed adapter hooked up to an 8Bitdo wireless snes controller looks like this:
 ![The completed SNES to CD-i Adapter](https://github.com/larryerb/SNEStoCDi/blob/master/sketchSNEStoCDiAtTiny85/Completed_Adapter.jpg)
 
 Future Improvements
