@@ -73,9 +73,6 @@ For some reason, all my attemps to use the hardware UART to send data to the CDi
 Thanks
 ------
 
-Thank you very much for reading my bad english (I'm french), I really hope SNEStoCDi will help you to use your CDi without spending insane money on an original CDi gamepad. If you build your SNEStoCDi, please let me know on my email, I would be very happy to know my work has been useful :)
+This project is a fork of Laurent Berta's SNEStoCDi project, so I would like to thank him for his fantastic code base which I could lightly tweak and create PCBs for.  I would also like to thank Rob Duarte and Paul Hackmann who provided libraries, code, and documentation which allowed him to create the SNEStoCDi project.
 
-Special thanks to Rob Duarte who created the great SNESpad library, and to Paul Hackmann who provided some very useful documentation about the CDi devices and communication protocol.
-
-bye !
-Laurent Berta / terbac_@hotmail.com
+- Larry Erb
